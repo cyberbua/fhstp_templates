@@ -1,7 +1,7 @@
 ## Instructions for Linux
 
 Requirements:
-* `texlive` full
+* `texlive-{core, latexextra, fontsextra, bibtexextra}`
 * `biber` for the bibliography
 * `rubber` for compiling the pdf
 * `make` for easy compiling and cleaning
