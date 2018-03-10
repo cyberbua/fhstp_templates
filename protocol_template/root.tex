@@ -1,0 +1,71 @@
+\documentclass[letterpaper, 11pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% DEFINITIONS
+%%%%%%%%%%%%%%%%%%%%%%%
+\gdef\lang{ngerman} % ngerman, british (for better date format)
+
+\gdef\mytitle{Titel}
+\gdef\mythema{Thema}
+
+\gdef\mysubject{Fach}
+\gdef\mycourse{Jahrgang}
+\gdef\myauthor{Name}
+\gdef\myid{ID}
+
+\gdef\myversion{1.0}
+\gdef\mybegin{Begonnen am XX. Monat Jahr}
+\gdef\myfinish{Beendet am \today}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\input special/preamble.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% CONFIGURATION
+%%%%%%%%%%%%%%%%%%%%%%%
+\linespread{1}
+
+\lhead{\mysubject}
+\rhead{\mythema}
+
+\lfoot{\mycourse}
+\cfoot{\thepage/\pageref{LastPage}}
+\rfoot{\ccbysa\hspace{2mm}\myauthor}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\bibliography{references}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% CONTENT
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\input{special/title}
+
+% table of contents
+\pagenumbering{gobble}
+\tableofcontents
+\newpage
+
+% main content
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+\input{sections/task.tex}
+\clearpage
+\input{sections/solution.tex}
+
+% appendicess
+\clearpage
+\listoffigures
+\clearpage
+\printbibliography
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%

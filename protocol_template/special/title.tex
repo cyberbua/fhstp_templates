@@ -1,0 +1,35 @@
+% define geometry for title page
+\newgeometry{top=0.4cm,bottom=2cm,left=2cm,right=2cm}
+
+\begin{titlepage}
+
+    \begin{figure}[!h]
+        \includegraphics[width=\linewidth]{img/fhstp_logo.png}
+    \end{figure}
+
+    \vspace{2.5cm}
+
+    {\begin{center} \slabfont\bfseries\huge
+            % \\[5mm]
+            \mytitle\\[5mm]
+            \mythema\\
+    \end{center}}
+
+    {\begin{flushleft} \sffamily\Large
+            \vspace{4cm}
+            \mysubject\\
+            \mycourse\\[10mm]
+            \myauthor~(\myid)\\[10mm]
+    \end{flushleft}}
+
+    {\begin{flushleft} \sffamily\normalsize
+            \vspace{5cm}
+            Version \myversion\\
+            \mybegin\\
+            \myfinish\\
+    \end{flushleft}}
+
+\end{titlepage}
+
+% Ends the declared geometry for the titlepage
+\restoregeometry

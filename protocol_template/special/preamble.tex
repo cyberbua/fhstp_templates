@@ -1,0 +1,176 @@
+%%%%%%%%%%%%%%%%%%%%%%%
+% PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[in]{fullpage}
+\usepackage[utf8]{inputenc}
+\usepackage[\lang]{babel}
+\usepackage{graphicx}
+\usepackage{wasysym}
+\usepackage{textcomp}
+\usepackage{sectsty}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{footmisc}
+\usepackage{fancyhdr}
+\usepackage{ccicons}
+\usepackage{suffix}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage{accsupp}
+\usepackage{color}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage{lastpage}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[style=numeric]{biblatex}
+\usepackage[top=1.5cm,bottom=2cm,left=2cm,right=2cm,headsep=1cm,includehead,includefoot]{geometry}
+\usepackage[nolist]{acronym}
+\usepackage{fontspec}
+\usepackage[hidelinks]{hyperref}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% FONT CONFIG
+%%%%%%%%%%%%%%%%%%%%%%%
+\setsansfont[
+    Path = fonts/Roboto/,
+    UprightFont = *-Regular,
+    ItalicFont = *-Italic,
+    BoldFont = *-Bold,
+    BoldItalicFont = *-BoldItalic
+]{Roboto}
+
+\setmonofont[
+    Path = fonts/RobotoMono/,
+    UprightFont = *-Regular,
+    ItalicFont = *-Italic,
+    BoldFont = *-Bold,
+    BoldItalicFont = *-BoldItalic
+]{RobotoMono}
+
+\newfontfamily\slabfont[
+    Path = fonts/RobotoSlab/,
+    UprightFont = *-Regular,
+    BoldFont = *-Bold,
+]{RobotoSlab}
+
+\renewcommand\familydefault{\sfdefault}
+\allsectionsfont{\slabfont}
+\chapterfont{\slabfont}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Definitions for Textcolor
+\usepackage{color}
+\definecolor{listings}{rgb}{0.96, 0.96, 0.96}
+\definecolor{update}{rgb}{1, 0.8, 0.8}
+\definecolor{config}{rgb}{0.8, 1, 0.8}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+% define code colors
+\definecolor{keyword}{rgb}{0.4,0.713,0}
+\definecolor{comment}{rgb}{0.44,0.627,0.826}
+\definecolor{string}{rgb}{0,0.376,0.627}
+\definecolor{extra}{rgb}{1,0.686,0}
+
+\lstset{
+    keywordstyle=\color{keyword},
+    commentstyle=\color{comment},
+    stringstyle=\color{string},
+    tabsize=4,
+    breaklines=true,
+    numbers=left,
+    stepnumber=1,
+    numbersep=8pt,
+    numberstyle=\tiny\ttfamily,
+    captionpos=b,
+    showspaces=false,
+    showstringspaces=false,
+    basewidth={0.53em,0.45em},
+    frame=single,
+    xleftmargin=5mm,
+    basicstyle=\scriptsize\ttfamily,
+}
+
+\lstdefinestyle{Java}{
+    language=Java,
+    morecomment=[s][\color{javadocblue}]{/**}{*/},
+}
+
+\lstdefinelanguage{XML}
+{
+    morestring=[b]",
+    morestring=[s]{>}{<},
+    morecomment=[s]{<?}{?>},
+    stringstyle=\color{black},
+    identifierstyle=\color{darkblue},
+    keywordstyle=\color{cyan},
+    % list your attributes here
+    morekeywords={xmlns,version,type}
+}
+
+\lstdefinestyle{XML}{
+    language=XML,
+    basicstyle=\ttfamily\small,
+    columns=fullflexible,
+    commentstyle=\color{gray}\upshape
+}
+
+\newcommand{\noncopynumber}[1]{
+    \BeginAccSupp{method=escape,ActualText={}}
+    #1
+    \EndAccSupp{}
+}
+
+\lstdefinestyle{bash}{
+    language=bash,
+    basicstyle=\ttfamily\small,
+    literate={-}{{-}}{1},
+    % http://tex.stackexchange.com/questions/145416/how-to-have-straight-single-quotes-in-lstlistings
+    upquote=true;
+    showstringspaces=false,
+    %numbers=none,
+    % http://tex.stackexchange.com/questions/122256/only-select-code-without-line-numbers
+    numberstyle=\tiny\noncopynumber,
+    breaklines=false,
+    columns=fullflexible,
+}
+
+% http://tex.stackexchange.com/questions/83085/how-to-improve-listings-display-of-json-files
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+\lstdefinelanguage{json}{
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=2,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    literate=
+    *{0}{{{\color{numb}0}}}{1}
+    {1}{{{\color{numb}1}}}{1}
+    {2}{{{\color{numb}2}}}{1}
+    {3}{{{\color{numb}3}}}{1}
+    {4}{{{\color{numb}4}}}{1}
+    {5}{{{\color{numb}5}}}{1}
+    {6}{{{\color{numb}6}}}{1}
+    {7}{{{\color{numb}7}}}{1}
+    {8}{{{\color{numb}8}}}{1}
+    {9}{{{\color{numb}9}}}{1}
+    {:}{{{\color{punct}{:}}}}{1}
+    {,}{{{\color{punct}{,}}}}{1}
+    {\{}{{{\color{delim}{\{}}}}{1}
+    {\}}{{{\color{delim}{\}}}}}{1}
+    {[}{{{\color{delim}{[}}}}{1}
+    {]}{{{\color{delim}{]}}}}{1},
+}
+
